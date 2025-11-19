@@ -16,14 +16,13 @@ function App() {
     <>
       <div className='h-screen w-screen flex flex-col justify-center items-center border-4 border-black'>
         <div id="timer-container" className='h-2/5 w-1/4 flex flex-col justify-center items-center border-2 border-blue-700 rounded-4xl overflow-visible'>
-          <TimerDisplay minuteOne={minuteOne} minuteOnClick={setMinuteOne} minuteTwo={minuteTwo} seconds={seconds} milliseconds={milliseconds} />
+          <TimerDisplay />
           <div id='buttons' className='h-1/2 w-full relative flex justify-around items-center overflow-visible'>
               <div className='h-full w-full absolute grid grid-rows-12 grid-cols-12'>
                 <span className='row-start-2 row-end-4 col-start-4 col-end-6 flex justify-center items-center text-xl font-normal'>CLEAR</span>
                 <div className='row-start-3 row-end-4 col-start-3 col-end-4 border-t-4 border-l-4 border-black'></div>
                 <div className='row-start-3 row-end-4 col-start-6 col-end-7 border-t-4 border-r-4 border-black'></div>
               </div>
-              {/* <button onClick={() => {setCount(count++)}}><MinuteButton name="Minute Button" text= "M" size= "h-20 w-20" fontSize="text-4xl"/></button> */}
               <MinuteButton name="Second Button" text= "M" size= "h-20 w-20" fontSize="text-4xl"/>
               <MinuteButton name="Second Button" text= "S" size= "h-20 w-20" fontSize="text-4xl"/>
               <MinuteButton name="Start/Stop Button" text= "ST/SP" size= "h-24 w-24" fontSize="text-3xl"/>
