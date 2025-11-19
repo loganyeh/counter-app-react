@@ -23,7 +23,7 @@ function App() {
                 <div className='row-start-3 row-end-4 col-start-3 col-end-4 border-t-4 border-l-4 border-black'></div>
                 <div className='row-start-3 row-end-4 col-start-6 col-end-7 border-t-4 border-r-4 border-black'></div>
               </div>
-              <MinuteButton name="Second Button" text= "M" size= "h-20 w-20" fontSize="text-4xl"/>
+              <MinuteButton name="Minute Button" text= "M" size= "h-20 w-20" fontSize="text-4xl"/>
               <MinuteButton name="Second Button" text= "S" size= "h-20 w-20" fontSize="text-4xl"/>
               <MinuteButton name="Start/Stop Button" text= "ST/SP" size= "h-24 w-24" fontSize="text-3xl"/>
           </div>
