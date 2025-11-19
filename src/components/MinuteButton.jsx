@@ -1,4 +1,5 @@
-function MinuteButton({ text, size, fontSize }) {
+function MinuteButton({ text, size, fontSize, minute, addSeconds }) {
+    
     const clickButton = () => {
       console.log(`${text} clicked`);
     };
