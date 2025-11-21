@@ -8,6 +8,7 @@ function TimerDisplay({minuteTensDigit, setMinuteTensDigit, minuteOnesDigit, set
 
     const resetTimer = () => {
         console.log('timer has been reset');
+        console.clear();
         setMinuteTensDigit(0);
         setMinuteOnesDigit(0);
         setSeconds(0);
