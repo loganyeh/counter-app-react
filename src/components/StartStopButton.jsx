@@ -1,8 +1,10 @@
-import { useState, useRef } from "react";
+import { useRef, useContext } from "react";
+import { MyContext } from "./MyContext";
 
-function StartStopButton({ minuteTensDigit, setMinuteTensDigit, minuteOnesDigit, setMinuteOnesDigit, seconds, setSeconds, milliseconds, setMilliseconds, text, size, fontSize }) {
+function StartStopButton({ text, size, fontSize }) {
     // const [isStart, setIsStart] = useState(false);
     const intervalRef = useRef(null);
+    const {minuteTensDigit, setMinuteTensDigit, minuteOnesDigit, setMinuteOnesDigit, seconds, setSeconds, milliseconds, setMilliseconds} = useContext(MyContext);
     const currentCountRef = useRef({seconds});
 
     const clickButton = () => {
