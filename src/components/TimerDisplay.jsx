@@ -1,17 +1,18 @@
 import { useState } from "react";
 
-function TimerDisplay({}) { 
-    let [minuteTensDigit, setMinuteTensDigit] = useState(0);
-    let [minuteOnesDigit, setMinuteOnesDigit] = useState(0);
-    let [seconds, setSeconds] = useState(0);
-    let [milliseconds, setMilliseconds] = useState(0);
+function TimerDisplay({minuteTensDigit, setMinuteTensDigit, minuteOnesDigit, setMinuteOnesDigit, seconds, setSeconds, milliseconds, setMilliseconds}) { 
+    // let [minuteTensDigit, setMinuteTensDigit] = useState(0);
+    // let [minuteOnesDigit, setMinuteOnesDigit] = useState(0);
+    // let [seconds, setSeconds] = useState(0);
+    // let [milliseconds, setMilliseconds] = useState(0);
 
     const resetTimer = () => {
         console.log('timer has been reset');
+        console.clear();
         setMinuteTensDigit(0);
-        setMinuteOnesDigit(minuteOnesDigit = 0);
-        setSeconds(seconds = 0);
-        setMilliseconds(milliseconds = 0);
+        setMinuteOnesDigit(0);
+        setSeconds(0);
+        setMilliseconds(0);
     }
 
     return (
