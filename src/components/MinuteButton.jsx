@@ -1,12 +1,14 @@
+import { useEffect, useContext } from "react";
+
 function MinuteButton({ digit, setDigit, text, size, fontSize }) {
     
     const clickButton = () => {
       setDigit(digit + 1);
     };
 
-    function counter(){
-      
-    }
+    useEffect(() => {
+      // console.log(digit);
+    }, [clickButton]);
   
     return (
       <button

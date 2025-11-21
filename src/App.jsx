@@ -2,7 +2,8 @@ import './App.css';
 import TimerDisplay from './components/TimerDisplay';
 import MinuteButton from './components/MinuteButton';
 import StartStopButton from './components/StartStopButton';
-import { useState, useRef } from "react";
+import { MyContext } from './components/MyContext';
+import { useState, useRef, createContext, useEffect } from "react";
 
 function App() {
   // console.clear(); 
@@ -12,9 +13,6 @@ function App() {
   let [seconds, setSeconds] = useState(3);
   let [milliseconds, setMilliseconds] = useState(0);
   let millisecondsRef = useRef(0);
-
-  // USE REF TUTORIAL
-  
 
   return (
     <>
@@ -27,9 +25,11 @@ function App() {
                 <div className='row-start-3 row-end-4 col-start-3 col-end-4 border-t-4 border-l-4 border-black'></div>
                 <div className='row-start-3 row-end-4 col-start-6 col-end-7 border-t-4 border-r-4 border-black'></div>
               </div>
-              <MinuteButton digit={minuteOnesDigit} setDigit={setMinuteOnesDigit} name="Minute Button" text= "M" size= "h-20 w-20" fontSize="text-4xl"/>
-              <MinuteButton digit={seconds} setDigit={setSeconds} name="Second Button" text="S" size="h-20 w-20" fontSize="text-4xl"/>
-              <StartStopButton minuteTensDigit={minuteTensDigit} setMinuteTensDigit={setMinuteTensDigit} minuteOnesDigit={minuteOnesDigit} setMinuteOnesDigit={setMinuteOnesDigit} seconds={seconds} setSeconds={setSeconds} milliseconds={milliseconds} setMilliseconds={setMilliseconds} name="Start/Stop Button" text= "ST/SP" size="h-24 w-24" fontSize="text-3xl"/>
+              <MyContext.Provider value={{ minuteTensDigit, setMinuteTensDigit, minuteOnesDigit, setMinuteOnesDigit, seconds, setSeconds, milliseconds, setMilliseconds }}>
+                <MinuteButton digit={minuteOnesDigit} setDigit={setMinuteOnesDigit} name="Minute Button" text= "M" size= "h-20 w-20" fontSize="text-4xl"/>
+                <MinuteButton digit={seconds} setDigit={setSeconds} name="Second Button" text="S" size="h-20 w-20" fontSize="text-4xl"/>
+                <StartStopButton name="Start/Stop Button" text= "ST/SP" size="h-24 w-24" fontSize="text-3xl"/>
+              </MyContext.Provider>
           </div>
         </div>
       </div>
