@@ -1,18 +1,22 @@
-import { useState } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
+import { MyContext } from "./MyContext";
 
-function TimerDisplay({minuteTensDigit, setMinuteTensDigit, minuteOnesDigit, setMinuteOnesDigit, seconds, setSeconds, milliseconds, setMilliseconds}) { 
+function TimerDisplay() { 
     // let [minuteTensDigit, setMinuteTensDigit] = useState(0);
     // let [minuteOnesDigit, setMinuteOnesDigit] = useState(0);
     // let [seconds, setSeconds] = useState(0);
     // let [milliseconds, setMilliseconds] = useState(0);
+    const { minuteTensDigit, setMinuteTensDigit, minuteOnesDigit, setMinuteOnesDigit, seconds, setSeconds, milliseconds, setMilliseconds, minuteOnesDigitCounter, setMinuteOnesDigitCounter, minuteTensDigitCounter, setMinuteTensDigitCounter } = useContext(MyContext);
 
     const resetTimer = () => {
-        console.log('timer has been reset');
         console.clear();
+        console.log('timer has been reset');
         setMinuteTensDigit(0);
         setMinuteOnesDigit(0);
         setSeconds(0);
         setMilliseconds(0);
+        setMinuteOnesDigitCounter(1);
+        setMinuteTensDigitCounter(1);
     }
 
     return (

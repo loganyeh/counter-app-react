@@ -1,14 +1,32 @@
-import { useEffect, useContext } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
+import { MyContext } from "./MyContext";
 
 function MinuteButton({ digit, setDigit, text, size, fontSize }) {
+  const { minuteTensDigit, setMinuteTensDigit, minuteOnesDigit, setMinuteOnesDigit, seconds, setSeconds, milliseconds, setMilliseconds, minuteOnesDigitCounter, setMinuteOnesDigitCounter, minuteTensDigitCounter, setMinuteTensDigitCounter } = useContext(MyContext);
+  let isMinuteButton = false;
     
     const clickButton = () => {
-      setDigit(digit + 1);
-    };
+      isMinuteButton = true;
+      
+      if(minuteOnesDigitCounter < 10){
+        setMinuteOnesDigit(prev => prev + 1);
+        setMinuteOnesDigitCounter(prev => prev + 1);
+        setMinuteTensDigitCounter(prev => prev + 1);
+        console.log(minuteOnesDigitCounter);
+      }
+      else if(minuteOnesDigitCounter > 9){
+        setMinuteOnesDigit(prev => prev = "");
+        setMinuteTensDigitCounter(prev => prev + 1);
+        setMinuteTensDigit(prev => prev = minuteTensDigitCounter);
+      }
+      else{
+        // setMinuteOnesDigit(prev => prev = "");
+        setMinuteTensDigit(prev => prev + 1);
+      }
 
-    useEffect(() => {
-      // console.log(digit);
-    }, [clickButton]);
+
+
+    };
   
     return (
       <button
