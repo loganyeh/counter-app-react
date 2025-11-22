@@ -17,8 +17,7 @@ function TimerDisplay() {
         setMilliseconds(0);
         setMinuteOnesDigitCounter(1);
         setMinuteTensDigitCounter(1);
-        // setIsMinuteButton(false);
-        // console.log(isMinuteButton);
+        setIsMinuteButton(false);
     }
 
     return (

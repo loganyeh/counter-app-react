@@ -7,9 +7,15 @@ function StartStopButton({ text, size, fontSize }) {
     const intervalRef = useRef(null);
     const currentCountRef = useRef({seconds});
 
+    if(isMinuteButton){
+      console.log(`isMinuteButton: true`);
+    }
+    else{
+      console.log(`isMinuteButton: false`);
+    }
+
     const clickButton = () => {
         setIsStart(prev => !prev);
-
         if(!intervalRef.current){
             intervalRef.current = setInterval(() => {
                 setSeconds(prev => {

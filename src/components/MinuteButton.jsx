@@ -5,11 +5,12 @@ function MinuteButton({ digit, setDigit, text, size, fontSize }) {
   const { minuteTensDigit, setMinuteTensDigit, minuteOnesDigit, setMinuteOnesDigit, seconds, setSeconds, milliseconds, setMilliseconds, minuteOnesDigitCounter, setMinuteOnesDigitCounter, minuteTensDigitCounter, setMinuteTensDigitCounter, setIsMinuteButton, isMinuteButton  } = useContext(MyContext);
   
   const clickButton = () => {
+    setIsMinuteButton(true);
+
       if(minuteOnesDigitCounter < 10){
         setMinuteOnesDigit(prev => prev + 1);
         setMinuteOnesDigitCounter(prev => prev + 1);
         setMinuteTensDigitCounter(prev => prev + 1);
-        console.log(minuteOnesDigitCounter);
       }
       else if(minuteOnesDigitCounter > 9){
         setMinuteOnesDigit(prev => prev = "");

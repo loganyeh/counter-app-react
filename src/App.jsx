@@ -7,7 +7,7 @@ import { useState, useRef, createContext, useEffect } from "react";
 
 function App() {
   // console.clear(); 
-  const [isMinuteButton, setIsMinuteButton] = useState();
+  const [isMinuteButton, setIsMinuteButton] = useState(false);
 
   let [minuteTensDigit, setMinuteTensDigit] = useState(0);
   let [minuteOnesDigit, setMinuteOnesDigit] = useState(0);
