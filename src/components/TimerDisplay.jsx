@@ -6,7 +6,7 @@ function TimerDisplay() {
     // let [minuteOnesDigit, setMinuteOnesDigit] = useState(0);
     // let [seconds, setSeconds] = useState(0);
     // let [milliseconds, setMilliseconds] = useState(0);
-    const { minuteTensDigit, setMinuteTensDigit, minuteOnesDigit, setMinuteOnesDigit, seconds, setSeconds, milliseconds, setMilliseconds, minuteOnesDigitCounter, setMinuteOnesDigitCounter, minuteTensDigitCounter, setMinuteTensDigitCounter } = useContext(MyContext);
+    const { minuteTensDigit, setMinuteTensDigit, minuteOnesDigit, setMinuteOnesDigit, seconds, setSeconds, milliseconds, setMilliseconds, minuteOnesDigitCounter, setMinuteOnesDigitCounter, minuteTensDigitCounter, setMinuteTensDigitCounter, isMinuteButton, setIsMinuteButton } = useContext(MyContext);
 
     const resetTimer = () => {
         console.clear();
@@ -17,6 +17,8 @@ function TimerDisplay() {
         setMilliseconds(0);
         setMinuteOnesDigitCounter(1);
         setMinuteTensDigitCounter(1);
+        // setIsMinuteButton(false);
+        // console.log(isMinuteButton);
     }
 
     return (

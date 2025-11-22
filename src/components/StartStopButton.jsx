@@ -1,14 +1,14 @@
-import { useRef, useContext } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { MyContext } from "./MyContext";
 
 function StartStopButton({ text, size, fontSize }) {
-    // const [isStart, setIsStart] = useState(false);
+    const { minuteTensDigit, setMinuteTensDigit, minuteOnesDigit, setMinuteOnesDigit, seconds, setSeconds, milliseconds, setMilliseconds, minuteOnesDigitCounter, setMinuteOnesDigitCounter, minuteTensDigitCounter, setMinuteTensDigitCounter, setIsMinuteButton, isMinuteButton } = useContext(MyContext);
+    const [isStart, setIsStart] = useState(false);
     const intervalRef = useRef(null);
-    const {minuteTensDigit, setMinuteTensDigit, minuteOnesDigit, setMinuteOnesDigit, seconds, setSeconds, milliseconds, setMilliseconds} = useContext(MyContext);
     const currentCountRef = useRef({seconds});
 
     const clickButton = () => {
-        // setIsStart(prev => !prev);
+        setIsStart(prev => !prev);
 
         if(!intervalRef.current){
             intervalRef.current = setInterval(() => {

@@ -7,20 +7,21 @@ import { useState, useRef, createContext, useEffect } from "react";
 
 function App() {
   // console.clear(); 
+  const [isMinuteButton, setIsMinuteButton] = useState();
 
   let [minuteTensDigit, setMinuteTensDigit] = useState(0);
-  let [minuteOnesDigit, setMinuteOnesDigit] = useState(5);
+  let [minuteOnesDigit, setMinuteOnesDigit] = useState(0);
   let [seconds, setSeconds] = useState(0);
   let [milliseconds, setMilliseconds] = useState(0);
   const millisecondsRef = useRef(0);
   const [minuteOnesDigitCounter, setMinuteOnesDigitCounter] = useState(() => minuteOnesDigit + 1);
-  const [minuteTensDigitCounter, setMinuteTensDigitCounter] = useState(() => minuteTensDigit);
+  const [minuteTensDigitCounter, setMinuteTensDigitCounter] = useState(() => minuteTensDigit + 1);
 
   return (
     <>
       <div className='h-screen w-screen flex flex-col justify-center items-center border border-black'>
         <div id="timer-container" className='h-2/5 w-1/4 flex flex-col justify-center items-center border-2 border-blue-700 rounded-4xl overflow-visible'>
-          <MyContext.Provider value={{ minuteTensDigit, setMinuteTensDigit, minuteOnesDigit, setMinuteOnesDigit, seconds, setSeconds, milliseconds, setMilliseconds, minuteOnesDigitCounter, setMinuteOnesDigitCounter, minuteTensDigitCounter, setMinuteTensDigitCounter }}>
+          <MyContext.Provider value={{ minuteTensDigit, setMinuteTensDigit, minuteOnesDigit, setMinuteOnesDigit, seconds, setSeconds, milliseconds, setMilliseconds, minuteOnesDigitCounter, setMinuteOnesDigitCounter, minuteTensDigitCounter, setMinuteTensDigitCounter, setIsMinuteButton, isMinuteButton }}>
           <TimerDisplay />
           <div id='buttons' className='h-1/2 w-full relative flex justify-around items-center overflow-visible'>
               <div className='h-full w-full absolute grid grid-rows-12 grid-cols-12'>
